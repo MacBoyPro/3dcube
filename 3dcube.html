@@ -1,0 +1,113 @@
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>3D cube</title>
+        
+        <style type="text/css">
+            
+            div#container {
+              padding-top:100px; 
+              -webkit-perspective: 800;
+              -webkit-perspective-origin: 50% 200px;
+            }
+            
+            div#cube {
+              position: relative;
+              margin: 0 auto;
+              height: 400px;
+              width: 400px;
+              -webkit-transition: -webkit-transform 2s linear;
+              -webkit-transform-style: preserve-3d;
+            }
+            
+            div.side {
+              position: absolute;
+              height: 360px;
+              width: 360px;
+              padding: 20px;
+              color: white;
+              background-color: rgba(0, 0, 100, 0.6);
+            }
+            
+            div#cube .one  {
+              -webkit-transform: rotateX(90deg) translateZ(200px);
+            }
+        
+            div#cube .two {
+              -webkit-transform: translateZ(200px);
+            }
+        
+            div#cube .three {
+              -webkit-transform: rotateY(90deg) translateZ(200px);
+            }
+        
+            div#cube .four {
+              -webkit-transform: rotateY(180deg) translateZ(200px);
+            }
+        
+            div#cube .five {
+              -webkit-transform: rotateY(-90deg) translateZ(200px);
+            }
+        
+            div#cube .six {
+              -webkit-transform: rotateX(-90deg) translateZ(200px) rotate(180deg);
+            }
+            
+        </style>
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready( function () {
+                var xAngle = 0, yAngle = 0;
+                    document.addEventListener('keydown', function(e) {
+                            switch(e.keyCode) {
+                                    case 37: // left
+                                            yAngle -= 90;
+                                            break;
+            
+                                    case 38: // up
+                                            xAngle += 90;
+                                            break;
+            
+                                    case 39: // right
+                                            yAngle += 90;
+                                            break;
+            
+                                    case 40: // down
+                                            xAngle -= 90;
+                                            break;
+                            };
+            
+                            var cube = document.getElementById("cube");
+                            cube.style.webkitTransform = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)";
+                    }, false);
+                });
+        </script>
+        
+    </head>
+    <body>
+        <div id="container">
+            <div id="cube">
+                <div class="side one">
+                    One face
+                </div>
+                <div class="side two">
+                    Up, down, left, right
+                </div>
+                <div class="side three">
+                    Lorem ipsum.
+                </div>
+                <div class="side four">
+                    New forms of navigation are fun.
+                </div>
+                <div class="side five">
+                    Rotating 3D cube
+                </div>
+                <div class="side six">
+                    More content
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
