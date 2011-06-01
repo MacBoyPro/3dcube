@@ -2,4 +2,6 @@ A simple 3d cube made with JQuery 1.6 and CCS3
 
 Demo: http://macboypro.com/3dcube/3dcube.html
 
+-- Needs to be used in a webkit browser: Safari or Chrome
+
 ![](http://macboypro.com/3dcube/3dcube.png)
