@@ -1,3 +1,5 @@
 A simple 3d cube made with JQuery 1.6 and CCS3
 
+Demo: http://macboypro.com/3dcube/3dcube.html
+
 ![](http://macboypro.com/3dcube/3dcube.png)
